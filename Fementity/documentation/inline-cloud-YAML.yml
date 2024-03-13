@@ -1,0 +1,50 @@
+steps:
+  - name: ubuntu
+    args:
+      - echo
+      - '${_GIT_REPO}'
+    id: confirm-webhook
+  - name: gcr.io/cloud-builders/git
+    args:
+      - '-c'
+      - |
+        echo "$$SSHKEY" > /root/.ssh/id_rsa
+        chmod 400 /root/.ssh/id_rsa
+        ssh-keyscan git.cs.dal.ca > /root/.ssh/known_hosts
+    id: get-ssh
+    entrypoint: bash
+    secretEnv:
+      - SSHKEY
+    volumes:
+      - name: ssh
+        path: /root/.ssh
+  - name: gcr.io/cloud-builders/git
+    args:
+      - '-c'
+      - |
+        git clone git@git.cs.dal.ca:schultz/fementity.git
+        cd fementity/merged/frontend
+        git checkout main
+        pwd
+    id: clone-repo
+    entrypoint: bash
+    volumes:
+      - name: ssh
+        path: /root/.ssh
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - '-t'
+      - gcr.io/$PROJECT_ID/newfrontend
+      - .
+    dir: fementity/merged/frontend
+    id: build-image
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - gcr.io/$PROJECT_ID/newfrontend
+    id: push-image
+availableSecrets:
+  secretManager:
+    - versionName: projects/500238883831/secrets/deploy/versions/latest
+      env: SSHKEY

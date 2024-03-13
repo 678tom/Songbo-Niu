@@ -1,0 +1,15 @@
+FROM ubuntu:22.04 AS base
+
+WORKDIR /
+
+RUN apt update
+RUN apt install -y nodejs npm python3-pip
+RUN apt -y upgrade
+
+COPY package*.json ./
+COPY .env ./
+COPY ./prisma ./prisma
+
+RUN npm ci
+
+ENTRYPOINT [ "python3", "prisma/seed/gen_json.py", "&&", "npm", "start" ]

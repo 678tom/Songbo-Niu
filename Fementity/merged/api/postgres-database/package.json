@@ -1,0 +1,15 @@
+{
+  "name": "postgres-database",
+  "version": "1.0.0",
+  "description": "Login credentials are provided in the .env file which is distributed among the team. ## Member Database This database stores all the information (except payment) in the member database.  ## Business Database This database stores the information in the Business database.",
+  "main": "business.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "knex": "^1.0.4",
+    "pg": "^8.7.3"
+  }
+}

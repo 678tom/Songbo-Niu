@@ -1,0 +1,23 @@
+{
+    "quizTitle": "placeholder",
+    "quiz": [
+      {
+        "question": "How much wood could a woodchuck chuck if a wood chuck could chuck wood?",
+        "answers": [
+          "35",
+          "99"
+        ],
+        "correctAnswer": "1"
+      },
+      {
+        "question": "Alice has 10 apples. Marisa took those 10 apples. How many apples does Alice have?",
+        "answers": ["0", "9", "4"],
+        "correctAnswer": "0"
+      },
+      {
+        "question": "True or False: This component only supports multiple choice at the moment",
+        "answers": ["True", "False"],
+        "correctAnswer": "0"
+      }
+    ]
+  }

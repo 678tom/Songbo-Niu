@@ -1,0 +1,9 @@
+# For MacOS users
+.DS_Store
+
+# IDE Config Dirs
+.idea/
+.vscode/
+
+# Dependencies
+node_modules/

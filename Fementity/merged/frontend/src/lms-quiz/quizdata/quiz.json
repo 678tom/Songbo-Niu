@@ -1,0 +1,35 @@
+{
+  "quizTitle": "placeholder",
+  "quiz": [
+    {
+      "question": "Who is Joe?",
+      "answers": ["Joe Mama", "Joe Swanson"],
+      "correctAnswer": "0"
+    },
+    {
+      "question": "How much wood could a woodchuck chuck if a wood chuck could chuck wood?",
+      "answers": [
+        "35",
+        "Good Question! I don't know",
+        "9999",
+        "2020"
+      ],
+      "correctAnswer": "1"
+    },
+    {
+      "question": "Alice has 10 apples. Marisa took 10. How many apples does Alice have?",
+      "answers": ["0", "9", "4"],
+      "correctAnswer": "0"
+    },
+    {
+      "question": "How many weeks did it take me to get something so trivial working?",
+      "answers": ["2", "3", "i've lost count"],
+      "correctAnswer": "2"
+    },
+    {
+      "question": "True or False: This component only supports multiple choice at the moment",
+      "answers": ["True", "False"],
+      "correctAnswer": "0"
+    }
+  ]
+}

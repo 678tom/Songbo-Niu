@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+}
+.container {
+  width: 90%;
+  padding: 0 15px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+@media screen and (max-width: 390px) {
+  .SideBar20 {
+    width: 90%;
+    margin: 5%;
+  }
+  .Sidebar_component {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .Colour_Sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+  .Style_Sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 390px) {
+  .container {
+    flex-direction: row;
+  }
+  .SideBar20 {
+    width: 20%;
+    padding: 15px;
+    padding-top: 100px;
+    background-color: #fdf8f1;
+  }
+  .Showcases80 {
+    width: 80%;
+    padding: 15px;
+    margin: auto;
+  }
+  .Showcasestop {
+    display: flex;
+    flex-direction: row;
+  }
+  .Showcasesbot {
+    display: flex;
+    flex-direction: row;
+  }
+  .Sidebar_component {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .Colour_Sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+  .Style_Sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+  .showcase_component {
+    padding: 5px;
+    margin: 10px;
+  }
+  .showcase {
+    flex: 8;
+  }
+}
+.btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}

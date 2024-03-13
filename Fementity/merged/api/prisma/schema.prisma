@@ -1,0 +1,52 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = “postgresql://Dev:FemDevJDKP9@34.95.17.80:5432/postgres”
+}
+
+model Business {
+    id                  String  @id @default(uuid())
+    business_name       String
+    business_slug       String
+    business_category   String
+    service             String
+    location            String
+    workshops           Boolean
+    podcast             Boolean
+    course_referral     Boolean
+    social_media_handle String
+    giveaway_interest   Boolean
+    website             String
+    description         String
+}
+
+model Member {
+    id                  String  @id @default(uuid())
+    first_name          String
+    last_name           String
+    occupation          String
+    email               String
+    location            String
+    workshops           Boolean
+    podcast             Boolean
+    course_referral     Boolean
+    social_media_handle String
+    giveaway_interest   Boolean
+    description         String
+}
+
+model classes {
+  id               Int      @id @default(autoincrement())
+  title            String?  @db.VarChar(100)
+  description      String   @db.VarChar(200)
+  date             String   @db.VarChar(50)
+  video_embed_link String?  @db.VarChar(50)
+  outcomes         String?  @db.VarChar(500)
+  quiz_results     String?  @db.VarChar(5)
+  section_titles   String[] @db.VarChar(100)
+  section_bodies   String[] @db.VarChar(1000)
+  progress         Int?
+}
