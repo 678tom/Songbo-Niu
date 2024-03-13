@@ -1,0 +1,25 @@
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  before_script:
+    - apt-get update -qy
+    - apt-get install -y openssh-client git
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan  outreach-projects.cs.dal.ca >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+
+  script:
+    - git clone $CI_REPOSITORY_URL 
+    - cd $(basename $CI_REPOSITORY_URL .git)
+    - scp -r * fcspeer@outreach-projects.cs.dal.ca:~/fcspeer_website
+    - ssh fcspeer@outreach-projects.cs.dal.ca 'cd ~/fcspeer_website && php81 ~/composer install'
+    - ssh fcspeer@outreach-projects.cs.dal.ca 'cd ~/fcspeer_website && npm install'
+    - ssh fcspeer@outreach-projects.cs.dal.ca 'cd ~/fcspeer_website && npm install react-router-dom'
+    - ssh fcspeer@outreach-projects.cs.dal.ca 'cd ~/fcspeer_website && npm run build'    
+  only:
+    - main
