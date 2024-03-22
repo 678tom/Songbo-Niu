@@ -1,7 +1,7 @@
 # ProjectNSCA
 
 ### Front End Information
-The front end web portal can be viewed by going to this [Link](​https://web.cs.dal.ca/~projectnsca/khurramaziz_cricketassociation/client/). We have retrieved a CS account from the CS helpdesk so we can use Bluenose to host the site, and database on. To connect to **bluenose.cs.dal.ca** you are able to SSH into the server using the following credentials: **username:** `projectnsca` and the ​**password**: `projectNSCA`​. 
+To connect to **bluenose.cs.dal.ca** you are able to SSH into the server using the following credentials: **username:** `projectnsca` and the ​**password**: `projectNSCA`​. 
 
 Updating the website can be done through SSH or any FTP Client. To connect via FTP you will use the same credentials as when you SSH **username:** `projectnsca` and the ​**password:** `projectNSCA​`. It is important to note any directories that are created will need the permissions set to `755` this can be done by running the following **command:**`~$ chmod 755 DirectoryName/`, for any file that is created it will need the permissions set to `644` this can be done by the following **command:** `~$ chmod 644 FileName.FileType.`
 
