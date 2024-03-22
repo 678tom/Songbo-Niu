@@ -13,7 +13,7 @@ If you would like to modify the database using an IDE such as MySQL Workbench yo
 ### Local Development
 If a developer would like to work on the project locally, this will require an apache tool such as MAMP. This allows the developer to have their PHP requests served. Once MAMP has been downloaded and installed you will need to open the preferences tab and navigate to the web server tab, and set the `Document Root` to the client directory. You will also need to open the MAMP phpMyAdmin and run the SQL files that are located in the `db/Dump Files`, this will ensure that you have the tables setup, and temporary data to test and develop the site with.
 
-### Userrole Development- Shreya
+### Userrole Development
 I have added new userroles inside the brandon_database nsca_roletypes table
 They are as follows:
 
@@ -29,7 +29,7 @@ When you are testing portion of the website that require different types of user
 
 **ADDING THESE CHANGES IS CRUCIAL TO FUNCTIONING WEBSITE**
 
-### Userrole Development- Shreya
+### Userrole Development
 I have added new users and userlogins(I have inserted into nsca_login, nsca_user, nsca_userroles) for testing purposes.
 
 These are the test login credentials for the test users:
