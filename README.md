@@ -1,1 +1,1 @@
-Welcome to my repository. All the projects have their folders above.
+Welcome to my repository. All the team projects I worked with others are in the folders above.
